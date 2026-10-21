@@ -1,10 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con PEPO MUSIC SOUND. Envíanos tus consultas y comentarios.">
 
-    <title>Formulario de Contacto</title>
+    <title>Contacto | PEPO MUSIC SOUND</title>
 
     <style>
         * {
@@ -15,24 +17,93 @@
         }
 
         body {
-            background: #f2f2f2;
+            background: linear-gradient(135deg, #171225, #292044);
             min-height: 100vh;
+            color: #222;
+        }
+
+        /* MENÚ DE NAVEGACIÓN */
+        .menu-pepo {
+            width: 100%;
+            background: #211936;
+            padding: 18px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-pepo {
+            color: #fff;
+            font-size: 19px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .enlaces-pepo {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .enlaces-pepo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .enlaces-pepo a:hover,
+        .enlaces-pepo a.activo {
+            color: #c9a8ff;
+        }
+
+        .enlaces-pepo a.activo {
+            border-bottom: 2px solid #c9a8ff;
+            padding-bottom: 5px;
+        }
+
+        /* CONTENEDOR DEL FORMULARIO */
+        .contenedor {
+            min-height: calc(100vh - 75px);
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 35px 20px;
         }
 
         .formulario {
-            background: white;
-            width: 90%;
+            background: #fff;
+            width: 100%;
             max-width: 500px;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .marca {
+            text-align: center;
+            color: #7251b5;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
         h1 {
             text-align: center;
+            color: #211936;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            text-align: center;
+            color: #666;
+            line-height: 1.5;
             margin-bottom: 25px;
         }
 
@@ -44,187 +115,260 @@
             display: block;
             margin-bottom: 7px;
             font-weight: bold;
+            color: #292044;
         }
 
         input,
         textarea {
+            display: block;
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #d4cde3;
             border-radius: 8px;
             font-size: 15px;
+            background: #faf9fd;
+            color: #222;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #8b68d1;
+            border-color: #8b68d1;
         }
 
         textarea {
-            height: 120px;
+            min-height: 130px;
             resize: vertical;
         }
 
         button {
             width: 100%;
-            padding: 13px;
+            padding: 14px;
             border: none;
             border-radius: 8px;
-            background: #5865F2;
+            background: #7251b5;
             color: white;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
+            transition: background 0.2s;
         }
 
-        button:hover {
-            background: #4752C4;
+        button:hover:not(:disabled) {
+            background: #563b91;
+        }
+
+        button:disabled {
+            opacity: 0.65;
+            cursor: wait;
         }
 
         #resultado {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 18px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
             font-weight: bold;
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #7251b5;
+            text-decoration: none;
+        }
+
+        .volver:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 760px) {
+            .menu-pepo {
+                justify-content: center;
+            }
+
+            .logo-pepo {
+                text-align: center;
+                width: 100%;
+            }
+
+            .enlaces-pepo {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .contenedor {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .formulario {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="formulario">
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="menu-pepo" aria-label="Navegación principal">
+        <a href="index.html" class="logo-pepo">PEPO MUSIC SOUND</a>
 
-        <h1>Contáctanos</h1>
+        <div class="enlaces-pepo">
+            <a href="index.html">Inicio</a>
+            <a href="javascript.html">JavaScript</a>
+            <a href="jquery.html">jQuery</a>
+            <a href="json.html">JSON</a>
+            <a href="hosting.html">Hosting</a>
+            <a href="google-ia.html">IAs de Google</a>
+            <a href="cuestionario.html">Quiz</a>
+            <a href="contacto.html" class="activo" aria-current="page">Contáctenos</a>
+        </div>
+    </nav>
 
-        <form id="contactForm">
+    <!-- FORMULARIO DE CONTACTO -->
+    <main class="contenedor">
+        <section class="formulario">
+            <p class="marca">PEPO MUSIC SOUND</p>
 
-            <div class="campo">
-                <label for="nombre">Nombre</label>
-                <input 
-                    type="text" 
-                    id="nombre" 
-                    placeholder="Escribe tu nombre"
-                    required
-                >
-            </div>
+            <h1>Contáctanos</h1>
 
-            <div class="campo">
-                <label for="correo">Correo electrónico</label>
-                <input 
-                    type="email" 
-                    id="correo" 
-                    placeholder="ejemplo@gmail.com"
-                    required
-                >
-            </div>
+            <p class="descripcion">
+                ¿Tienes alguna consulta o sugerencia?
+                Envíanos tu mensaje y nos pondremos en contacto contigo.
+            </p>
 
-            <div class="campo">
-                <label for="mensaje">Mensaje</label>
-                <textarea 
-                    id="mensaje" 
-                    placeholder="Escribe tu mensaje..."
-                    required
-                ></textarea>
-            </div>
+            <form id="contactForm">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Escribe tu nombre"
+                        maxlength="100"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
 
-            <button type="submit">
-                Enviar mensaje
-            </button>
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@gmail.com"
+                        maxlength="254"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
 
-        </form>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="Escribe tu mensaje..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+                </div>
 
-        <p id="resultado"></p>
+                <button type="submit" id="btnEnviar">
+                    Enviar mensaje
+                </button>
+            </form>
 
-    </div>
+            <p id="resultado" role="status" aria-live="polite"></p>
 
+            <a class="volver" href="index.html">
+                ← Volver al inicio
+            </a>
+        </section>
+    </main>
 
     <script>
-
-        // ==================================================
-        // PEGA AQUÍ TU NUEVO WEBHOOK DE DISCORD
-        // ==================================================
-
-        const webhookURL = "https://discord.com/api/webhooks/1557494789639905280/XpsUancje2leoQzsvrobPdPN1qfiCxJ12djdSDAU1mAFkdQqFXjQPqJRMSUcGCYFaebs";
-
-
-        // ==================================================
-        // FORMULARIO
-        // ==================================================
-
         const formulario = document.getElementById("contactForm");
+        const resultado = document.getElementById("resultado");
+        const boton = document.getElementById("btnEnviar");
 
         formulario.addEventListener("submit", async function(event) {
-
             event.preventDefault();
 
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const mensaje = document.getElementById("mensaje").value.trim();
 
-            // Obtener los datos del formulario
+            if (!nombre || !correo || !mensaje) {
+                resultado.textContent = "Completa todos los campos.";
+                resultado.style.color = "#c62828";
+                return;
+            }
 
-            const nombre = document.getElementById("nombre").value;
-            const correo = document.getElementById("correo").value;
-            const mensaje = document.getElementById("mensaje").value;
-
-
-            // Mensaje que recibirá Discord
-
-            const datos = {
-
-                content:
-                "📩 **NUEVO MENSAJE DEL FORMULARIO**\n\n" +
-
-                "👤 **Nombre:** " + nombre + "\n" +
-
-                "📧 **Correo:** " + correo + "\n\n" +
-
-                "💬 **Mensaje:**\n" + mensaje
-
-            };
-
+            resultado.textContent = "Enviando tu mensaje...";
+            resultado.style.color = "#7251b5";
+            boton.disabled = true;
+            boton.textContent = "Enviando...";
 
             try {
-
-                const respuesta = await fetch(webhookURL, {
-
+                const respuesta = await fetch("/api/contacto", {
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json"
                     },
-
-                    body: JSON.stringify(datos)
-
+                    body: JSON.stringify({
+                        nombre: nombre,
+                        correo: correo,
+                        mensaje: mensaje
+                    })
                 });
 
+                const datos = await respuesta.json();
 
-                if (respuesta.ok) {
-
-                    document.getElementById("resultado").textContent =
-                        "✅ Mensaje enviado correctamente.";
-
-                    document.getElementById("resultado").style.color =
-                        "green";
-
-                    formulario.reset();
-
-                } else {
-
-                    document.getElementById("resultado").textContent =
-                        "❌ No se pudo enviar el mensaje.";
-
-                    document.getElementById("resultado").style.color =
-                        "red";
-
+                if (!respuesta.ok) {
+                    throw new Error(
+                        datos.error || "No se pudo enviar el mensaje."
+                    );
                 }
 
+                if (datos.parcial) {
+                    resultado.textContent =
+                        datos.mensaje ||
+                        "El mensaje solo llegó a uno de los destinos.";
+                    resultado.style.color = "#a66b00";
+                } else {
+                    resultado.textContent =
+                        "¡Mensaje enviado correctamente a Discord y al correo!";
+                    resultado.style.color = "#218838";
+                }
+
+                formulario.reset();
 
             } catch (error) {
+                console.error("Error al enviar el formulario:", error);
 
-                console.error(error);
+                resultado.textContent =
+                    error.message ||
+                    "No se pudo conectar con el servidor. Inténtalo nuevamente.";
 
-                document.getElementById("resultado").textContent =
-                    "❌ Ocurrió un error al enviar el mensaje.";
+                resultado.style.color = "#c62828";
 
-                document.getElementById("resultado").style.color =
-                    "red";
-
+            } finally {
+                boton.disabled = false;
+                boton.textContent = "Enviar mensaje";
             }
-
         });
-
     </script>
 
 </body>
 </html>
+```
