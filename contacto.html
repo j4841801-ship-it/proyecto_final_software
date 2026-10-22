@@ -1,374 +1,434 @@
-```html
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacta con PEPO MUSIC SOUND. Envíanos tus consultas y comentarios.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con PEPO MUSIC SOUND. Envíanos tus consultas y comentarios.">
+  <title>Contacto | PEPO MUSIC SOUND</title>
 
-    <title>Contacto | PEPO MUSIC SOUND</title>
+  <style>
+    :root {
+      --purple: #7b2cbf;
+      --purple-light: #9d4edd;
+      --bg: #f7f4fb;
+      --text: #22202a;
+      --muted: #6b6572;
+      --card: #ffffff;
+      --line: #e5dff0;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+    [data-theme="dark"] {
+      --bg: #101014;
+      --text: #f5f3f7;
+      --muted: #b9b2c2;
+      --card: #19171d;
+      --line: #302b35;
+    }
 
-        body {
-            background: linear-gradient(135deg, #171225, #292044);
-            min-height: 100vh;
-            color: #222;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* MENÚ DE NAVEGACIÓN */
-        .menu-pepo {
-            width: 100%;
-            background: #211936;
-            padding: 18px 4%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 18px;
-            flex-wrap: wrap;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .logo-pepo {
-            color: #fff;
-            font-size: 19px;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
 
-        .enlaces-pepo {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        .enlaces-pepo a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
 
-        .enlaces-pepo a:hover,
-        .enlaces-pepo a.activo {
-            color: #c9a8ff;
-        }
+    .brand-dot {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      font-size: 18px;
+    }
 
-        .enlaces-pepo a.activo {
-            border-bottom: 2px solid #c9a8ff;
-            padding-bottom: 5px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
 
-        /* CONTENEDOR DEL FORMULARIO */
-        .contenedor {
-            min-height: calc(100vh - 75px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 35px 20px;
-        }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
 
-        .formulario {
-            background: #fff;
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-        }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: white;
+      background: var(--purple);
+    }
 
-        .marca {
-            text-align: center;
-            color: #7251b5;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
+    .theme-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 11px;
+      cursor: pointer;
+    }
 
-        h1 {
-            text-align: center;
-            color: #211936;
-            margin-bottom: 10px;
-        }
+    main {
+      max-width: 1000px;
+      margin: 42px auto;
+      padding: 0 20px;
+    }
 
-        .descripcion {
-            text-align: center;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
+    .intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
-        .campo {
-            margin-bottom: 18px;
-        }
+    .intro h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
 
-        label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-            color: #292044;
-        }
+    .intro p {
+      color: var(--muted);
+      margin: 0;
+    }
 
-        input,
-        textarea {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d4cde3;
-            border-radius: 8px;
-            font-size: 15px;
-            background: #faf9fd;
-            color: #222;
-        }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+      gap: 22px;
+    }
 
-        input:focus,
-        textarea:focus {
-            outline: 2px solid #8b68d1;
-            border-color: #8b68d1;
-        }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
 
-        textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
+    .panel h2 {
+      margin-top: 0;
+    }
 
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #7251b5;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: 700;
+    }
 
-        button:hover:not(:disabled) {
-            background: #563b91;
-        }
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 12px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
 
-        button:disabled {
-            opacity: 0.65;
-            cursor: wait;
-        }
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
 
-        #resultado {
-            text-align: center;
-            margin-top: 18px;
-            line-height: 1.5;
-            overflow-wrap: anywhere;
-            font-weight: bold;
-        }
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--purple-light);
+      outline-offset: 1px;
+    }
 
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #7251b5;
-            text-decoration: none;
-        }
+    .send-button {
+      margin-top: 18px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--purple);
+      color: #fff;
+      padding: 12px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
 
-        .volver:hover {
-            text-decoration: underline;
-        }
+    .send-button:hover {
+      background: var(--purple-light);
+    }
 
-        @media (max-width: 760px) {
-            .menu-pepo {
-                justify-content: center;
-            }
+    .send-button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
 
-            .logo-pepo {
-                text-align: center;
-                width: 100%;
-            }
+    #estado {
+      margin-top: 14px;
+      overflow-wrap: anywhere;
+    }
 
-            .enlaces-pepo {
-                justify-content: center;
-                gap: 12px;
-            }
+    .muted {
+      color: var(--muted);
+    }
 
-            .contenedor {
-                min-height: auto;
-            }
-        }
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
 
-        @media (max-width: 480px) {
-            .formulario {
-                padding: 22px;
-            }
+    @media (max-width: 700px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
 
-            h1 {
-                font-size: 25px;
-            }
-        }
-    </style>
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu-pepo" aria-label="Navegación principal">
-        <a href="index.html" class="logo-pepo">PEPO MUSIC SOUND</a>
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="nav-inner">
 
-        <div class="enlaces-pepo">
-            <a href="index.html">Inicio</a>
-            <a href="javascript.html">JavaScript</a>
-            <a href="jquery.html">jQuery</a>
-            <a href="json.html">JSON</a>
-            <a href="hosting.html">Hosting</a>
-            <a href="google-ia.html">IAs de Google</a>
-            <a href="cuestionario.html">Quiz</a>
-            <a href="contacto.html" class="activo" aria-current="page">Contáctenos</a>
-        </div>
-    </nav>
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true">♫</span>
+        <span>PEPO MUSIC SOUND</span>
+      </a>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <main class="contenedor">
-        <section class="formulario">
-            <p class="marca">PEPO MUSIC SOUND</p>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="jquery.html">jQuery</a>
+        <a href="json.html">JSON</a>
+        <a href="hosting.html">Hosting</a>
+        <a href="ias-google.html">IAs de Google</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="contacto.html" aria-current="page">Contáctenos</a>
 
-            <h1>Contáctanos</h1>
+        <button class="theme-button" id="themeButton" type="button">
+          Cambiar tema
+        </button>
+      </div>
 
-            <p class="descripcion">
-                ¿Tienes alguna consulta o sugerencia?
-                Envíanos tu mensaje y nos pondremos en contacto contigo.
-            </p>
+    </div>
+  </nav>
 
-            <form id="contactForm">
-                <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Escribe tu nombre"
-                        maxlength="100"
-                        autocomplete="name"
-                        required
-                    >
-                </div>
+  <main>
 
-                <div class="campo">
-                    <label for="correo">Correo electrónico</label>
-                    <input
-                        type="email"
-                        id="correo"
-                        name="correo"
-                        placeholder="ejemplo@gmail.com"
-                        maxlength="254"
-                        autocomplete="email"
-                        required
-                    >
-                </div>
+    <header class="intro">
+      <h1>Contáctenos</h1>
+      <p>
+        ¿Tienes alguna consulta o sugerencia?
+        Escríbenos y nos pondremos en contacto contigo.
+      </p>
+    </header>
 
-                <div class="campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        placeholder="Escribe tu mensaje..."
-                        maxlength="5000"
-                        required
-                    ></textarea>
-                </div>
+    <div class="contact-layout">
 
-                <button type="submit" id="btnEnviar">
-                    Enviar mensaje
-                </button>
-            </form>
+      <section class="panel">
+        <h2>Envíanos un mensaje</h2>
 
-            <p id="resultado" role="status" aria-live="polite"></p>
+        <form id="contactForm">
 
-            <a class="volver" href="index.html">
-                ← Volver al inicio
-            </a>
-        </section>
-    </main>
+          <label for="nombre">Nombre</label>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
 
-    <script>
-        const formulario = document.getElementById("contactForm");
-        const resultado = document.getElementById("resultado");
-        const boton = document.getElementById("btnEnviar");
+          <label for="correo">Correo electrónico</label>
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            autocomplete="email"
+            maxlength="254"
+            required
+          >
 
-        formulario.addEventListener("submit", async function(event) {
-            event.preventDefault();
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            maxlength="2000"
+            required
+          ></textarea>
 
-            const nombre = document.getElementById("nombre").value.trim();
-            const correo = document.getElementById("correo").value.trim();
-            const mensaje = document.getElementById("mensaje").value.trim();
+          <button class="send-button" id="sendButton" type="submit">
+            Enviar mensaje
+          </button>
 
-            if (!nombre || !correo || !mensaje) {
-                resultado.textContent = "Completa todos los campos.";
-                resultado.style.color = "#c62828";
-                return;
-            }
+          <p id="estado" role="status" aria-live="polite"></p>
 
-            resultado.textContent = "Enviando tu mensaje...";
-            resultado.style.color = "#7251b5";
-            boton.disabled = true;
-            boton.textContent = "Enviando...";
+        </form>
+      </section>
 
-            try {
-                const respuesta = await fetch("/api/contacto", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        nombre: nombre,
-                        correo: correo,
-                        mensaje: mensaje
-                    })
-                });
+      <aside class="panel">
+        <h2>PEPO MUSIC SOUND</h2>
 
-                const datos = await respuesta.json();
+        <p>
+          Gracias por visitar nuestro sitio.
+          Puedes utilizar este formulario para compartir tus dudas,
+          comentarios o sugerencias.
+        </p>
 
-                if (!respuesta.ok) {
-                    throw new Error(
-                        datos.error || "No se pudo enviar el mensaje."
-                    );
-                }
+        <p class="muted">
+          Revisa que tu correo esté escrito correctamente
+          para que podamos responderte.
+        </p>
+      </aside>
 
-                if (datos.parcial) {
-                    resultado.textContent =
-                        datos.mensaje ||
-                        "El mensaje solo llegó a uno de los destinos.";
-                    resultado.style.color = "#a66b00";
-                } else {
-                    resultado.textContent =
-                        "¡Mensaje enviado correctamente a Discord y al correo!";
-                    resultado.style.color = "#218838";
-                }
+    </div>
+  </main>
 
-                formulario.reset();
+  <footer>
+    © <span id="year"></span> PEPO MUSIC SOUND.
+    Todos los derechos reservados.
+  </footer>
 
-            } catch (error) {
-                console.error("Error al enviar el formulario:", error);
+  <script>
+    /*
+      PRUEBA ESCOLAR SOLAMENTE.
 
-                resultado.textContent =
-                    error.message ||
-                    "No se pudo conectar con el servidor. Inténtalo nuevamente.";
+      Pega aquí la URL de un webhook NUEVO de Discord.
+      No publiques la página con un webhook real,
+      porque cualquier visitante podrá verlo.
+    */
+    const DISCORD_WEBHOOK_URL =
+      "https://discord.com/api/webhooks/1557494789639905280/XpsUancje2leoQzsvrobPdPN1qfiCxJ12djdSDAU1mAFkdQqFXjQPqJRMSUcGCYFaebs";
 
-                resultado.style.color = "#c62828";
+    const form = document.getElementById("contactForm");
+    const estado = document.getElementById("estado");
+    const sendButton = document.getElementById("sendButton");
 
-            } finally {
-                boton.disabled = false;
-                boton.textContent = "Enviar mensaje";
-            }
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Cambiar entre tema oscuro y claro.
+    document.getElementById("themeButton").addEventListener("click", () => {
+      const html = document.documentElement;
+
+      html.dataset.theme =
+        html.dataset.theme === "dark" ? "light" : "dark";
+    });
+
+    // Enviar el formulario a Discord.
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (
+        !DISCORD_WEBHOOK_URL.startsWith(
+          "https://discord.com/api/webhooks/"
+        ) &&
+        !DISCORD_WEBHOOK_URL.startsWith(
+          "https://discordapp.com/api/webhooks/"
+        )
+      ) {
+        estado.textContent =
+          "Primero configura la URL del webhook de Discord en el código.";
+        return;
+      }
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      if (!nombre || !correo || !mensaje) {
+        estado.textContent =
+          "Completa todos los campos antes de enviar.";
+        return;
+      }
+
+      sendButton.disabled = true;
+      estado.textContent = "Enviando mensaje…";
+
+      try {
+        const respuesta = await fetch(DISCORD_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            content:
+              "**Nuevo mensaje desde PEPO MUSIC SOUND**\n" +
+              "**Nombre:** " + nombre + "\n" +
+              "**Correo:** " + correo + "\n" +
+              "**Mensaje:** " + mensaje
+          })
         });
-    </script>
+
+        if (!respuesta.ok) {
+          throw new Error(
+            "Discord rechazó el mensaje (HTTP " +
+            respuesta.status + ")."
+          );
+        }
+
+        estado.textContent =
+          "¡Mensaje enviado correctamente a Discord!";
+
+        form.reset();
+
+      } catch (error) {
+        console.error(error);
+
+        estado.textContent =
+          "No se pudo enviar. Revisa la URL del webhook y la conexión. " +
+          "Si el error continúa, puede ser una restricción del navegador.";
+      } finally {
+        sendButton.disabled = false;
+      }
+    });
+  </script>
 
 </body>
 </html>
-```
