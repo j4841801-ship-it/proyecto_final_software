@@ -1,4 +1,4 @@
-
+```html
 <!doctype html>
 <html lang="es">
 
@@ -167,37 +167,47 @@
             <div id="nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link active"
                            aria-current="page"
                            href="contacto.html">Contáctenos</a>
                     </li>
 
-                    <li>
+                    <!-- INSTAGRAM AGREGADO -->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="https://www.instagram.com/pepomusicsound.oficial?cplk=YjQxMm9xcXNyYzR1"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Instagram 📸
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="javascript.html">JavaScript</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="jquery.html">jQuery</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="json.html">JSON</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="hosting.html">Hosting</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="google-ia.html">IAs de Google</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="cuestionario.html">Quiz</a>
                     </li>
 
@@ -216,7 +226,7 @@
                         </select>
                     </li>
 
-                    <li>
+                    <li class="nav-item">
                         <button
                             id="themeToggle"
                             class="btn btn-sm btn-outline-brand ms-lg-2"
@@ -320,7 +330,7 @@
         </div>
     </main>
 
-    <!-- PIE DE PÁGINA ORIGINAL -->
+    <!-- PIE DE PÁGINA -->
     <footer class="footer">
         <div class="container d-flex justify-content-between flex-wrap gap-2">
             <span>PEPO MUSIC SOUND · Proyecto académico</span>
@@ -337,12 +347,11 @@
     <script src="js/script.js"></script>
     <script src="js/language.js"></script>
 
-    <!-- ENVÍO A DISCORD: SOLO PARA PRUEBAS -->
+    <!-- ENVÍO A DISCORD: CONFIGURAR ANTES DE PROBAR -->
     <script>
         /*
-          ADVERTENCIA:
-          Un webhook colocado aquí queda visible en el navegador.
-          No publiques una URL real en este archivo.
+          No coloques un webhook real en un archivo HTML público.
+          Para una web publicada, configura el envío mediante tu servidor.
         */
         const DISCORD_WEBHOOK_URL =
             "https://discord.com/api/webhooks/1557494789639905280/XpsUancje2leoQzsvrobPdPN1qfiCxJ12djdSDAU1mAFkdQqFXjQPqJRMSUcGCYFaebs";
@@ -370,7 +379,7 @@
                 )
             ) {
                 contactStatus.textContent =
-                    "Falta configurar el webhook de Discord.";
+                    "Configura el envío a Discord antes de enviar mensajes.";
                 return;
             }
 
@@ -393,7 +402,9 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error("Discord respondió con HTTP " + response.status);
+                    throw new Error(
+                        "Discord respondió con HTTP " + response.status
+                    );
                 }
 
                 contactStatus.textContent =
@@ -415,3 +426,4 @@
 
 </body>
 </html>
+```
